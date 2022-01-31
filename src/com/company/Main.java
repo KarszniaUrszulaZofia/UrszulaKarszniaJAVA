@@ -37,5 +37,28 @@ public class Main {
     System.out.println(teacher.getPet().species);
     teacher.pet.feed();
     teacher.pet.takeForAWalk();
+    System.out.println("----------------------------------------------");
+
+    Car volkswagen = new Car("T-Roc", "Volkswagen", "Magenta", 2021);
+    Car trabant = new Car("601", "Trabant", "blue", 1976);
+    student.car = trabant;
+    teacher.car = volkswagen;
+    System.out.println("Imie: " + student.firstName);
+    System.out.println("Nazwisko: " + student.lastName);
+    System.out.println("Wiek: " + student.age);
+    System.out.println("Model auta: " + student.car.model);
+    System.out.println("Producent auta: " + student.car.producer);
+    System.out.println("Kolor brumbrumka: " + student.car.colour);
+    System.out.println("Rok produkcji auta: " + student.car.yearOfProduction);
+    System.out.println("-------------------------------------------------------");
+    System.out.println("Imie: " + teacher.firstName);
+    System.out.println("Nazwisko: " + teacher.lastName);
+    System.out.println("Wiek: " + teacher.age);
+    System.out.println("Model auta: " + teacher.car.model);
+    System.out.println("Producent auta: " + teacher.car.producer);
+    System.out.println("Kolor brumbrumka: " + teacher.car.colour);
+    System.out.println("Rok produkcji auta: " + teacher.car.yearOfProduction);
+
     }
-}
+    }
+
