@@ -17,61 +17,75 @@ public class Main {
     public static void main(String[] args) {
         Diesel opel = new Diesel("Opel", "Astra", 1999, "Silver");
         Electric tesla = new Electric("Tesla", "v1", 2020, "Red");
-        LPG vagen = new LPG("Volkswagen", "golf 4", 2000, "Black");
+        LPG vwagen = new LPG("Volkswagen", "golf 4", 2000, "Black");
         Phone iphone = new Phone("Apple", "ios", 2020, 5.3, 8);
-
-        opel.value = 10000.00;
-        tesla.value = 100000.00;
-        vagen.value = 1000.0;
 
         Human student = new Human();
         Human teacher = new Human();
-        Human dziekan = new Human();
-
+        Human profesor = new Human();
+        opel.value = 10000.00;
+        tesla.value = 100000.00;
+        vwagen.value = 1000.00;
+        student.firstName = "Urszula";
+        student.lastName = "Karsznia";
+        student.age = 32;
+        teacher.firstName = "Łukasz";
+        teacher.lastName = "Karsznia";
+        teacher.age = 30;
+        profesor.firstName = "Tadeusz";
+        profesor.lastName = "Riedl";
+        profesor.age = 83;
+        student.cash = 1000.00;
+        teacher.cash = 100000.00;
+        profesor.cash = 10000000000.00;
+        System.out.println("---------------------------------------------");
         student.addCar(opel);
         student.addCar(tesla);
-        student.addCar(vagen);
-        student.addCar(opel);
-        student.addCar(tesla);
-        student.addCar(vagen);
-        student.addCar(opel);
-        student.addCar(tesla);
-        student.addCar(vagen);
-        student.addCar(opel);
-        student.addCar(tesla);
-        student.addCar(vagen);
-        student.addCar(opel);
-        student.addCar(tesla);
-        student.addCar(vagen);
-        student.removeCar(tesla);
-        System.out.println(student.hasCar(opel));
-        System.out.println(student.getGarageValue());
-        teacher.addCar(opel);
-        teacher.addCar(tesla);
-        teacher.addCar(vagen);
-        System.out.println("----------------------------------");
+        System.out.println("Hajs studenta przed sprzedażą = " + student.cash);
+        System.out.println("Hajs nauczyciela przed zakupami = " + teacher.cash);
         opel.Sale(student, teacher, 10.0);
-        System.out.println("----------------------------------");
-        teacher.cash = 10.0;
-        System.out.println("Hajs nauczyciela przed zakupami: " + teacher.cash);
-        System.out.println("Hajs studenta przed sprzedażą: " + student.cash);
-        opel.Sale(student,teacher,10.0);
-        System.out.println("Hajs nauczyciela po zakupach: " + teacher.cash);
-        System.out.println("Hajs studenta po sprzedaży:" + student.cash);
-        System.out.println("----------------------------------");
-        opel.Sale(dziekan, student, 10.0);
-        System.out.println("----------------------------------");
-        student.cash = 1000.0;
-        opel.Sale(teacher, student, 10.0);
-        System.out.println("----------------------------------");
-        dziekan.cash = 10000.0;
-        opel.Sale(student, dziekan, 10.0);
-
-
-
-
-
-
-
-    }
-}
+        System.out.println("Hajs studenta po sprzedaży = " + student.cash);
+        System.out.println("Hajs nauczyciela po zakupach = " + teacher.cash);
+        System.out.println("---------------------------------------------");
+        tesla.Sale(student, teacher, 1000000.00);
+        System.out.println("---------------------------------------------");
+        vwagen.Sale(student, teacher, 10.0);
+        System.out.println("---------------------------------------------");
+        profesor.addCar(tesla);
+        profesor.addCar(tesla);
+        profesor.addCar(tesla);
+        profesor.addCar(tesla);
+        profesor.addCar(tesla);
+        profesor.addCar(tesla);
+        profesor.addCar(tesla);
+        profesor.addCar(tesla);
+        profesor.addCar(tesla);
+        profesor.addCar(tesla);
+        tesla.Sale(student, profesor, 1000000.00);
+        System.out.println("---------------------------------------------");
+        profesor.carList();
+        student.carList();
+        System.out.println(---------------------------------------------");
+                System.out.println("Wartosc samochodow w garazu profesora = " + profesor.getGarageValue() + " PLN");
+        System.out.println("Wartosc samochodow w garazu studenta = " + student.getGarageValue() + " PLN");
+        System.out.println(---------------------------------------------");
+                System.out.println(profesor.hasFreeSpace());
+        System.out.println(student.hasFreeSpace());
+        System.out.println(---------------------------------------------");
+                System.out.println(profesor.hasCar(tesla));
+        System.out.println(student.hasCar(opel));
+        System.out.println(---------------------------------------------");
+                profesor.carList();
+        profesor.removeCar(tesla);
+        profesor.carList();
+        System.out.println(profesor.hasFreeSpace());
+        System.out.println(---------------------------------------------");
+                teacher.carList();
+        teacher.addCar(tesla);
+        teacher.addCar(vwagen);
+        teacher.addCar(opel);
+        teacher.addCar(vwagen);
+        teacher.addCar(tesla);
+        teacher.carList();
+        teacher.sortCars();
+        teacher.carList();

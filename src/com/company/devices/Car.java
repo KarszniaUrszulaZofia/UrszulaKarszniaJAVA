@@ -30,15 +30,17 @@ public abstract class Car extends Device {
     @Override
     public void Sale(Human seller, Human buyer, Double price) {
         if (buyer.cash < price){
-            System.out.println("Nie stać Cię");
+            System.out.println(buyer + " Nie stać Cię");
         } else if (!seller.hasCar(this)){
-            System.out.println("Nie ładnie sprzedawać coś, czego się nie ma.. OSZUŚCIE!");
+            System.out.println(seller + "Nie ładnie sprzedawać coś, czego się nie ma.. OSZUŚCIE!");
+        } else if (!buyer.hasFreeSpace()){
+            System.out.println(buyer + "No i gdzie go postawisz?? brak miejsca..");
         } else{
             seller.cash += price;
             buyer.cash -= price;
             seller.removeCar(this);
             buyer.addCar(this);
-            System.out.println("Udało Ci się sprzedać auto za " + price + " PLN");
+            System.out.println(seller + "Udało Ci się sprzedać auto za " + price + " PLN dla: " + buyer);
         }
     }
 

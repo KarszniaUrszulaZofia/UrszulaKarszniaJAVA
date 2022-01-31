@@ -50,16 +50,29 @@ public class Human extends Animal{
     }
 
     public Car getCar(Integer space) {
-        return garage[space];
+        if (space != null) {
+            return garage[space];
+        } else {
+            return null;
+        }
+    }
 
     public void setCar(Car car, Integer space) {
-        if(salary > car.value){
-            this.car = car;
-            System.out.println("No i cyk, bez kredytu, za gotóweczkę auto wjechało!");
-        }else if(salary > (car.value / 12)){
-            this.car = car;
-            System.out.println("Może i na kredyt ale auto jest!");
-        }else{
+        if (salary > car.value) {
+            if (garage[space] != null) {
+                this.garage[space] = car;
+                System.out.println("No i cyk, bez kredytu, za gotóweczkę auto wjechało!");
+            } else {
+                System.out.println("To miejsce w garazu jest juz zajete przez inne auto");
+            }
+        } else if (salary > (car.value / 12)) {
+            if (garage[space] != null) {
+                this.garage[space] = car;
+                System.out.println("Może i na kredyt ale auto jest!");
+            } else {
+                System.out.println("To miejsce w garazu jest juz zajete przez inne auto");
+            }
+        } else {
             System.out.println("Buahahaha jesteś za biedny, powiedz marzeniom o aucie bye bye");
         }
     }
@@ -85,6 +98,15 @@ public class Human extends Animal{
             }
             return false;
         }
+    public boolean hasFreeSpace() {
+        int counterSpace = DEFAULT_GARAGE_SIZE;
+        for (Car car : this.garage) {
+            if (car != null) {
+                counterSpace -= 1;
+            }
+        }
+        return counterSpace != 0;
+    }
 
         public void removeCar(Car car) {
             for(int i = 0; i < this.garage.length; i++){
@@ -113,6 +135,26 @@ public class Human extends Animal{
             }
 
         }
+    public void carList() {
+        int counter = 0;
+        System.out.println("Lista samochodów w garazu, " + firstName);
+        for (Car car : garage) {
+            if (car != null) {
+                counter += 1;
+            }
+        }
+        if (counter > 0) {
+            for (int i = 0; i < garage.length; i++) {
+                if (this.garage[i] != null) {
+                    System.out.println(garage[i]);
+                } else {
+                    System.out.println("Puste miejsce nr." + i);
+                }
+            }
+        } else {
+            System.out.println("Nie masz aut w garazu");
+        }
+    }
 
         public Double getGarageValue(){
             Double totalValue = 0.0;
@@ -124,5 +166,34 @@ public class Human extends Animal{
             System.out.println("Łączna wartość aut w garazu:");
             return totalValue;
         }
+    public void sortCars() {
+        Car temp;
+        int carNumberCounter = 0;
+        Car[] temporaryGarage = new Car[DEFAULT_GARAGE_SIZE];
+        for (Car car : garage) {
+            if (car != null) {
+                carNumberCounter += 1;
+            }
+        }
+        int arrayCounter = 0;
+        Integer[] tempArray = new Integer[carNumberCounter];
+        for (Car car : garage) {
+            if (car != null) {
+                tempArray[arrayCounter] = car.yearOfProduction;
+                arrayCounter += 1;
+            }
+        }
+        Arrays.sort(tempArray);
+        for(int i = 0; i < tempArray.length; i++){
+            for (Car car : garage) {
+                if (car != null && Objects.equals(tempArray[i], car.yearOfProduction)) {
+                    temp = car;
+                    temporaryGarage[i] = temp;
+                }
+            }
+        }
+        garage = temporaryGarage;
+    }
+}
 
     }
