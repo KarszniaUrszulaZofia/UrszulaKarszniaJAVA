@@ -3,6 +3,7 @@ import com.company.devices.Car;
 import com.company.devices.Phone;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Human extends Animal{
     private static final int DEFAULT_GARAGE_SIZE = 10;
@@ -163,7 +164,6 @@ public class Human extends Animal{
                     totalValue += car.value;
                 }
             }
-            System.out.println("Łączna wartość aut w garazu:");
             return totalValue;
         }
     public void sortCars() {
