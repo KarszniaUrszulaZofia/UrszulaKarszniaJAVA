@@ -19,10 +19,17 @@ public class Main {
         Electric tesla = new Electric("Tesla", "v1", 2020, "Red");
         LPG vwagen = new LPG("Volkswagen", "golf 4", 2000, "Black");
         Phone iphone = new Phone("Apple", "ios", 2020, 5.3, 8);
+        Phone motorola = new Phone("Motorola", "Moto G5 Play", 2021, 6.5, 8)
 
         Human student = new Human();
         Human teacher = new Human();
         Human profesor = new Human();
+
+        Applications github = new Applications("GitHub", "1.1", 150.0);
+        Applications sleepAsAndroid = new Applications("SleepAsAndroid", "1.2", 110.0);
+        Applications facebook = new Applications("Facebook", "1.3", 1.0);
+        Applications maps = new Applications("Google Maps", "2.0", 0.0);
+
         opel.value = 10000.00;
         tesla.value = 100000.00;
         vwagen.value = 1000.00;
@@ -35,33 +42,32 @@ public class Main {
         profesor.firstName = "Tadeusz";
         profesor.lastName = "Riedl";
         profesor.age = 83;
+
         student.cash = 1000.00;
         teacher.cash = 100000.00;
         profesor.cash = 10000000000.00;
         student.salary = 10000.00;
         teacher.salary = 1000000.00;
         profesor.salary = 1000000.00;
+
         System.out.println("-----------------------");
-        student.addCar(opel);
-        opel.carOwners();
-        System.out.println("-----------------------");
-        student.setCar(opel, 1);
-        opel.carOwners();
-        System.out.println("-----------------------");
-        opel.Sale(student, teacher, 100.0);
-        opel.carOwners();
-        System.out.println("-----------------------");
-        student.addCar(opel);
-        opel.Sale(student, teacher, 100.0);
-        System.out.println("-----------------------");
-        System.out.println("Czy auto było wcześniej na kogoś zarejestrowane? " + opel.checkOwners());
-        System.out.println("Czy auto było wcześniej na kogoś zarejestrowane? " + tesla.checkOwners());
-        System.out.println("-----------------------");
-        System.out.println("Łączna liczba transakcji dla tego auta to: " + opel.transactionCount());
-        System.out.println("-----------------------");
-        System.out.println("Sprawdzanie, czy kiedykolwiek nastąpiła sprzedaż na linii student - nauczyciel?" + opel.checkSelling(student, teacher));
-        System.out.println("Sprawdzanie, czy kiedykolwiek nastąpiła sprzedaż na linii nauczyciel - student? " + opel.checkSelling(teacher, student));
-        System.out.println("Sprawdzanie, czy kiedykolwiek nastąpiła sprzedaż na linii nauczyciel - profesor?" + opel.checkSelling(teacher, profesor));
-        System.out.println("Sprawdzanie, czy kiedykolwiek nastąpiła sprzedaż na linii profesor - nauczyciel?" + opel.checkSelling(profesor, teacher));
-        System.out.println("Sprawdzanie, czy kiedykolwiek nastąpiła sprzedaż na linii student - profesor?" + opel.checkSelling(student, profesor));
-        System.out.println("Sprawdzanie, czy kiedykolwiek nastąpiła sprzedaż na linii profesor - student?" + opel.checkSelling(profesor, student));
+
+        System.out.println("Hajs studenta przed zakupem i instalacją aplikacji" + student.cash + " PLN");
+        iphone.installAnApp(student, github);
+        System.out.println("Hajs studenta po zakupie i instalacji aplikacji " + student.cash + " PLN");
+        System.out.println("------------------------------");
+        System.out.println("Czy aplikacja " + sleepAsAndroid.name + "jest zainstalowana? " + iphone.appIsInstalled(sleepAsAndroid));
+        System.out.println("Czy aplikacja " + github.name + "jest zainstalowana? " + iphone.appIsInstalled(github));
+        System.out.println("Czy aplikacja " + sleepAsAndroid.name + "jest zainstalowana? " + iphone.appIsInstalled(sleepAsAndroid.name));
+        System.out.println("Czy aplikacja " + maps.name + "jest zainstalowana? " + iphone.appIsInstalled(maps.name));
+        iphone.allFreeApps();
+        iphone.installAnApp(student, maps);
+        iphone.allFreeApps();
+        System.out.println("Koszt wszystkich zainstalowanych aplikacji: " + iphone.valueInstalledApps() + " PLN");
+        iphone.installAnApp(student, github);
+        iphone.installAnApp(student, facebook);
+        iphone.allInstalledAppNames();
+        iphone.allInstalledAppCheapest();
+        motorola.installAnApp(teacher, github);
+        motorola.installAnApp(teacher, sleepAsAndroid);
+
