@@ -1,22 +1,34 @@
 package com.company.devices;
 
-public class Car {
-    public String model;
-    public String producer;
-    public String colour;
-    public String engineVolume;
+public class Car extends Device {
+    public Double engineVolume;
     public String plates;
-    public Integer yearOfProduction;
     public Double value;
 
-    public Car(String model, String producer, String colour, Integer yearOfProduction) {
-        this.model = model;
-        this.producer = producer;
-        this.colour = colour;
-        this.yearOfProduction = yearOfProduction;
+    public Car(String producer, String model, Integer yearOfProduction, String colour) {
+        super(producer, model, yearOfProduction, colour);
+        this.engineVolume = 1.8;
         this.value = 0.0;
+        this.plates = "GD 123AS";
     }
+
+    @Override
+    public void turnOn() {
+        System.out.println("Przekręcam kluczyk");
+        System.out.println("Silnik robi wrum wrum");
+        System.out.println("Wruuuuuum Wruuuuuum");
+    }
+
+    @Override
     public String toString(){
-        return "Model: " + model + " Producent: " + producer + " Kolor: " + colour + " Rok produkcji: " + yearOfProduction;
+        return "Car{" +
+                "producer='" + producer + '\'' +
+                ", model='" + model + '\'' +
+                ", yearOfProduction=" + yearOfProduction +
+                ", engineVolume=" + engineVolume +
+                ", plates=" + plates +
+                ", value='" + value + '\'' +
+                ", colour='" + colour + '\'' +
+                '}';
     }
 }

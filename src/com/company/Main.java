@@ -42,8 +42,8 @@ public class Main {
     teacher.pet.takeForAWalk();
     System.out.println("----------------------------------------------");
 
-    Car volkswagen = new Car("T-Roc", "Volkswagen", "Magenta", 2021);
-    Car trabant = new Car("601", "Trabant", "blue", 1976);
+    Car volkswagen = new Car("Volkswagen", "T-Roc", 2021, "white");
+    Car trabant = new Car("Trabant", "601", 1976, "blue");
     student.car = trabant;
     teacher.car = volkswagen;
     System.out.println("Imie: " + student.firstName);
@@ -84,10 +84,8 @@ public class Main {
     student.setSalary(0.0);
     student.setCar(trabant);
     System.out.println("---------------------------------------------");
-    Phone samsung = new Phone("Samsung", 6.3, "Android", "Black", 9);
-    Phone motorola = new Phone("Motorola", 6.0, "Android", "Blue", 6);
-    Animal cat = new Animal("cat");
-    Animal dog = new Animal("dog");
+    Phone samsung = new Phone("Samsung", "S20", 2021, 6.3, 9);
+    Phone motorola = new Phone("Motorola", "Moto G5 Play", 2020, 6.0, 6);
     System.out.println(trabant);
     System.out.println(volkswagen);
     System.out.println("------------------------------------------");
@@ -99,6 +97,27 @@ public class Main {
     System.out.println("------------------------------------------");
     System.out.println(cat);
     System.out.println(dog);
+    System.out.println("------------------------------------------");
+    System.out.println(trabant);
+    System.out.println(volkswagen);
+    System.out.println("------------------------------------------");
+    System.out.println(student);
+    System.out.println(teacher);
+    System.out.println("------------------------------------------");
+    System.out.println(motorola);
+    System.out.println(samsung);
+    System.out.println("------------------------------------------");
+    System.out.println(cat);
+    System.out.println(dog);
+    System.out.println("------------------------------------------");
+    motorola.turnOn();
+    System.out.println("------------------------------------------");
+    samsung.turnOn();
+    System.out.println("------------------------------------------");
+    trabant.turnOn();
+    System.out.println("------------------------------------------");
+    volkswagen.turnOn();
+    System.out.println("------------------------------------------");
     }
     }
 

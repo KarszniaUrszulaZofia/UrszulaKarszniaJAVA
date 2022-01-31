@@ -1,21 +1,37 @@
 package com.company.devices;
 
-public class Phone {
-    public String model;
+public class Phone extends Device {
     public Double screenSize;
-    public String os;
-    public String colour;
+    public String OS;
     public Integer ramSize;
 
-    public Phone(String model, Double screenSize, String os, String colour, Integer ramSize){
-        this.model = model;
-        this.screenSize = screenSize;
-        this.os = os;
-        this.colour = colour;
-        this.ramSize = ramSize;
+    public Phone(String producer, String model, Integer yearOfProduction, Double screenSize, Integer ramSize){
+        super(producer, model, yearOfProduction, "white");
+        this.screenSize = 0.0;
+        this.ramSize = 0;
+        this.OS = "Not assigned";
     }
 
+    @Override
+    public void turnOn() {
+        System.out.println("Włączanie..");
+        System.out.println("Czarny ekran");
+        System.out.println("Inicjalizacja systemu i charakterystyczny dźwięk systemu..");
+        System.out.println("Czekaj...");
+        System.out.println("Czekaj...");
+        System.out.println("Czekaj...");
+        System.out.println("Urządzenie zostało uruchomione a na ekranie pojawiła się prośba o hasło!");
+    }
+
+    @Override
     public String toString(){
-        return "Model: " + model + " Screen size: " + screenSize + " Os: " + os + "Kolor: " + colour + "Ram size: " + ramSize + " GB";
+        return "Phone{" +
+                "producer='" + producer + '\'' +
+                ", model='" + model + '\'' +
+                ", yearOfProduction=" + yearOfProduction +
+                ", screenSize=" + screenSize +
+                ", os='" + OS + '\'' +
+                ", colour='" + colour + '\'' +
+                '}';
     }
 }
