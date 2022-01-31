@@ -71,7 +71,16 @@ public class Main {
     System.out.println("---------------------------------------------");
     System.out.println(student.getSalary());
     System.out.println("---------------------------------------------");
-
+    trabant.value = 100.0;
+    student.setSalary(200.0);
+    student.setCar(trabant);
+    System.out.println("---------------------------------------------");
+    student.setSalary(50.0);
+    student.setCar(trabant);
+    System.out.println("---------------------------------------------");
+    student.setSalary(0.0);
+    student.setCar(trabant);
+    System.out.println("---------------------------------------------");
     }
     }
 
