@@ -8,6 +8,7 @@ public class Human {
     public Integer age;
     public Animal pet;
     public Car car;
+    public Double salary;
 
     public Human(String firstName, String lastName, Integer age){
         this.firstName = firstName;
@@ -21,5 +22,19 @@ public class Human {
 
     public Animal getPet() {
         return pet;
+    }
+    public Double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Double salary) {
+        if (salary <= 0) {
+            System.out.println("Yyyyy no way - nie zapłacę Ci za to, ze pozwolisz mi pracować (no chyba, że jako pierwsza praca w IT to ok)");
+        } else {
+            System.out.println("Zapisano w systemie kadrowo-płacowym");
+            System.out.println("Odbierz dokumenty z Działu Księgowego lub HR");
+            System.out.println("Koniecze instytucje zostały poinformowane o zmianie wynagrodzenia");
+            this.salary = salary;
+        }
     }
 }

@@ -58,6 +58,19 @@ public class Main {
     System.out.println("Producent auta: " + teacher.car.producer);
     System.out.println("Kolor brumbrumka: " + teacher.car.colour);
     System.out.println("Rok produkcji auta: " + teacher.car.yearOfProduction);
+    System.out.println("-------------------------------------------------------");
+    student.setSalary(0.0);
+    System.out.println("---------------------------------------------");
+    System.out.println(student.getSalary());
+    System.out.println("---------------------------------------------");
+    student.setSalary(-1.0);
+    System.out.println("---------------------------------------------");
+    System.out.println(student.getSalary());
+    System.out.println("---------------------------------------------");
+    student.setSalary(100.0);
+    System.out.println("---------------------------------------------");
+    System.out.println(student.getSalary());
+    System.out.println("---------------------------------------------");
 
     }
     }
