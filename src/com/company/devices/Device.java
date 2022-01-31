@@ -1,5 +1,8 @@
 package com.company.devices;
 
+import com.company.Human;
+import com.company.Salleable;
+
 public abstract class Device {
     public String producer;
     public String model;
@@ -14,6 +17,11 @@ public abstract class Device {
     }
 
     public abstract void turnOn();
+
+    @Override
+    public void Sale(Human seller, Human buyer, Double price) {
+
+    }
 
     public String toString(){
         return "";
