@@ -1,6 +1,7 @@
 package com.company;
+import com.company.devices.Car
 
-import com.company.Animal;
+import com.company.devices.Car;
 
 public class Human {
     public String firstName;
@@ -54,5 +55,8 @@ public class Human {
         }else{
             System.out.println("Buahahaha jesteś za biedny, powiedz marzeniom o aucie bye bye");
         }
+    }
+    public String toString(){
+        return "Imie: " + firstName + " Nazwisko: " + lastName + " Wiek: " + age;
     }
 }

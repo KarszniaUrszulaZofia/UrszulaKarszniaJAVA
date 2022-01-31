@@ -41,4 +41,7 @@ public class Animal {
             System.out.println("I co, będziesz mnie ciągnął na smyczy??!! Serio?! Nie widzisz, że nie żyję?!");
         }
     }
+    public String toString() {
+        return "Gatunek: " + species + " waga: " + weight + " kg";
+    }
 }
