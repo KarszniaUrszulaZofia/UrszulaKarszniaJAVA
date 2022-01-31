@@ -1,3 +1,7 @@
+package com.company;
+
+import com.company.Animal;
+
 public class Human {
     public String firstName;
     public String lastName;

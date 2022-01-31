@@ -1,3 +1,5 @@
+package com.company;
+
 public class Animal {
     private static final Double DEFAULT_CAT_WEIGHT = 4.0;
     private static final Double DEFAULT_DOG_WEIGHT = 10.0;
